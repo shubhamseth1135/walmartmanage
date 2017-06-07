@@ -1,0 +1,129 @@
+﻿@model WalmartManagementApplication.Models.storeemployee
+
+@{
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#dob").datepicker();
+        $("#dateofjoining").datepicker();
+    });
+</script>
+
+   @using (Html.BeginForm("Create", "storeemployees", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>Add Employee</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.name, "Employee Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeid,"Store ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <text>@HttpContext.Current.Session["storeid"] </text>
+            @Html.Hidden("storeid",Session["storeid"])
+                </div>
+            </div>
+          
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeid, "Store Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <text>@HttpContext.Current.Session["storename"] </text>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.gender, "Select Gender", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(m => Model.gender, new List<SelectListItem>
+            {
+                new SelectListItem() {Text="Male",Value="Male"},
+                new SelectListItem() {Text="Female",Value="Female"}
+            }, "Select Gender", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.gender, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.emailid,"Email ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.emailid, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.emailid, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.address,"Address", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.mobileno,"Mobile No.", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.mobileno, new { htmlAttributes = new { @class = "form-control",@type="number" } })
+                    @Html.ValidationMessageFor(model => model.mobileno, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.qualification,"Qualification", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.qualification, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.qualification, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.dob,"Date of Birth", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dob, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dob, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.photo, "Add Photo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" id="Photo" name="Photo" accept="image/*" />
+                    @Html.ValidationMessageFor(model => model.photo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+           
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.dateofjoining,"Date of Joining", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dateofjoining, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dateofjoining, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+     
+     
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+    <div>
+        
+    </div>

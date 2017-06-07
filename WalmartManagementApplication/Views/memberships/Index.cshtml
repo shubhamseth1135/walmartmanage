@@ -1,0 +1,100 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.membership>
+
+@{ 
+    Layout = "~/Views/Shared/_employeelayout.cshtml";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" coonclick="return confirm('Are You Sure You Want To Delete?')" ntent="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        
+    </p>
+    <table class="table table-bordered table-striped" >
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.merchantname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.emailid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mobileno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.identifyproof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vatno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicetaxno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateofexpiry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.store.storename)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model)
+    {
+        
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.merchantname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobileno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                
+                <img height="80" src="@Url.Content(item.identifyproof)" />
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vatno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicetaxno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateofexpiry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.store.storename)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.memberid }) 
+                @Html.ActionLink("Issue card", "Create","membership_cards", new { id = item.memberid },null)
+              
+            </td>
+        </tr>
+        
+    }
+    </table>
+</body>
+</html>

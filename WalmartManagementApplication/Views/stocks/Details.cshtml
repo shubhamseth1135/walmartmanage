@@ -1,0 +1,66 @@
+﻿@model WalmartManagementApplication.Models.stock
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>stock</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.quantity)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.quantity)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dateofstock)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dateofstock)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.product.productname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.product.productname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.storeemployee.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.storeemployee.name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.store.storename)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.store.storename)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.stockid }) |
+        
+    </p>
+</body>
+</html>

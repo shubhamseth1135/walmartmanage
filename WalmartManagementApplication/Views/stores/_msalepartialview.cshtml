@@ -1,0 +1,33 @@
+﻿@model List<WalmartManagementApplication.Models.salesVM>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Sno.
+        </th>
+        <th>
+           Date of Sale
+        </th>
+        <th>
+           Sale Amount
+        </th>
+      
+    </tr>
+
+    @{
+        int count = 0;
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.dateofsale</td>
+                <td>@item.saleamount</td>
+            </tr>
+        }
+
+
+    }
+
+</table>

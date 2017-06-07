@@ -1,0 +1,158 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.product>
+
+@{
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+<style>
+
+</style>
+<!DOCTYPE html>
+<script>
+    $(document).ready(function () {
+        
+        $("#categories").change(function () {
+            $("#subcat").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetSubcategories")',
+                dataType: 'json',
+                data: { catid: $("#categories").val() },
+                success: function (subcats) {
+                    $.each(subcats, function (i, subcat) {
+                        $("#subcat").append("<option value= " + subcat.id + ">" + subcat.subcategoryname + "</option>")
+                    })
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve sub categories.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+
+</script>
+@{
+    if(Session["error"] !=null)
+    {
+    <h3 class="text-danger" style="text-align:center">@Session["error"]</h3>
+        Session["error"] = null;
+    }
+}
+
+    @using (Html.BeginForm("Index", "products", FormMethod.Post))
+    {
+
+        <h4>View Products</h4>
+      
+             <div class="form-group">
+            @Html.Label("Select Category", new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("categories", (IEnumerable<SelectListItem>)ViewBag.categories,"Select Category", new { @class = "form-control" })
+            </div>
+        </div>       
+        <br/>      
+         <br/>      
+            <div class="form-group">
+                @Html.Label("Select Subcategory", new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("subcat", new SelectList( string.Empty,"Value","Text"),"Select Subcategory", new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Search" class="btn btn-success btn-block" />
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+    }
+
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>
+                Sno.
+            </th>
+            <th>
+                @Html.Label("Product name")
+            </th>
+            <th>
+                @Html.Label("Description")
+            </th>
+            <th>
+                @Html.Label("Price")
+            </th>
+            <th>
+                @Html.Label("Discount")
+            </th>
+            <th>
+                @Html.Label("Photo")
+            </th>
+            <th>
+                @Html.Label("SkuNumber")
+            </th>
+            <th>
+                @Html.Label("Store name")
+            </th>
+            <th>
+                @Html.Label("Category")
+            </th>
+            <th>
+                @Html.Label("Sub category")
+            </th>
+            <th></th>
+        </tr>
+        @{
+            int count = 0;
+            foreach (var item in Model)
+
+            {
+                count++;
+                using (Html.BeginForm("Delete", "products", new { id = item.pid }))
+                {
+
+
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.productname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.discount)
+                        </td>
+                        <td>
+                            <img height="80" width="80" src="@Url.Content(item.photo)" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.skunumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.store.storename)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.subcategory.category.categoryname)
+                        </td>
+                        <td>
+
+                            @Html.DisplayFor(modelItem => item.subcategory.subcategoryname)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.pid })
+
+                            <input type="submit" value="Delete" class="btn btn-danger btn-link" onclick="return confirm('Are You Sure You Want To Delete?')" />
+
+                        </td>
+                    </tr>
+                }
+            }
+        }
+    </table>
+    

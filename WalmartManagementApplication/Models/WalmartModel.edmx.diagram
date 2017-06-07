@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b06dd62e79c44884a7ecb21c6f1ea2e4" Name="Diagram1">
+        <EntityTypeShape EntityType="WalmartModels.Administrator" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WalmartModels.store" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WalmartModels.storeemployee" Width="1.5" PointX="5.625" PointY="6.875" />
+        <AssociationConnector Association="WalmartModels.FK__storeempl__store__49C3F6B7" />
+        <EntityTypeShape EntityType="WalmartModels.category" Width="1.5" PointX="5.375" PointY="1" />
+        <EntityTypeShape EntityType="WalmartModels.subcategory" Width="1.5" PointX="7.625" PointY="0.875" />
+        <AssociationConnector Association="WalmartModels.FK__subcatego__categ__6FE99F9F" />
+        <EntityTypeShape EntityType="WalmartModels.product" Width="1.5" PointX="9.875" PointY="0.75" />
+        <AssociationConnector Association="WalmartModels.FK__product__storeid__03F0984C" />
+        <AssociationConnector Association="WalmartModels.FK__product__subcati__02FC7413" />
+        <EntityTypeShape EntityType="WalmartModels.membership" Width="1.5" PointX="5.625" PointY="11.75" />
+        <AssociationConnector Association="WalmartModels.FK__membershi__store__2739D489" />
+        <EntityTypeShape EntityType="WalmartModels.membership_cards" Width="1.5" PointX="7.875" PointY="12.375" />
+        <AssociationConnector Association="WalmartModels.FK__membershi__membe__625A9A57" />
+        <EntityTypeShape EntityType="WalmartModels.stock" Width="1.5" PointX="12.125" PointY="4.5" />
+        <AssociationConnector Association="WalmartModels.FK__stock__productid__756D6ECB" />
+        <AssociationConnector Association="WalmartModels.FK__stock__employeei__7755B73D" />
+        <AssociationConnector Association="WalmartModels.FK__stock__storeid__76619304" />
+        <EntityTypeShape EntityType="WalmartModels.bill" Width="1.5" PointX="10.125" PointY="8.125" />
+        <EntityTypeShape EntityType="WalmartModels.billdetail" Width="1.5" PointX="14.375" PointY="4.625" />
+        <AssociationConnector Association="WalmartModels.FK__bill__cardnumber__0F2D40CE" />
+        <AssociationConnector Association="WalmartModels.FK__bill__empid__11158940" />
+        <AssociationConnector Association="WalmartModels.FK__bill__storeid__10216507" />
+        <AssociationConnector Association="WalmartModels.FK__billdetai__billi__16CE6296" />
+        <AssociationConnector Association="WalmartModels.FK__billdetai__produ__17C286CF" />
+        <EntityTypeShape EntityType="WalmartModels.feedback" Width="1.75" PointX="10.125" PointY="12.875" />
+        <AssociationConnector Association="WalmartModels.FK__feedback__cardnu__1B9317B3" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

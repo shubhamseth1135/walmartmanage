@@ -1,0 +1,96 @@
+﻿@model WalmartManagementApplication.Models.store
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>store</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.storename)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.storename)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.address)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.managername)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.managername)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.manageremail)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.manageremail)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.managermobile)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.managermobile)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.storephoneno)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.storephoneno)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.photo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.photo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                
+            </div>
+        }
+    </div>
+</body>
+</html>

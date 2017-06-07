@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WalmartModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="emailid" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="usertype" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WalmartContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrators" EntityType="Self.Administrator" />
+    <EntitySet Name="stores" EntityType="WalmartModels.store" />
+    <EntitySet Name="storeemployees" EntityType="WalmartModels.storeemployee" />
+    <AssociationSet Name="FK__storeempl__store__49C3F6B7" Association="WalmartModels.FK__storeempl__store__49C3F6B7">
+      <End Role="store" EntitySet="stores" />
+      <End Role="storeemployee" EntitySet="storeemployees" />
+    </AssociationSet>
+    <EntitySet Name="categories" EntityType="WalmartModels.category" />
+    <EntitySet Name="subcategories" EntityType="WalmartModels.subcategory" />
+    <AssociationSet Name="FK__subcatego__categ__6FE99F9F" Association="WalmartModels.FK__subcatego__categ__6FE99F9F">
+      <End Role="category" EntitySet="categories" />
+      <End Role="subcategory" EntitySet="subcategories" />
+    </AssociationSet>
+    <EntitySet Name="products" EntityType="WalmartModels.product" />
+    <AssociationSet Name="FK__product__storeid__03F0984C" Association="WalmartModels.FK__product__storeid__03F0984C">
+      <End Role="store" EntitySet="stores" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__product__subcati__02FC7413" Association="WalmartModels.FK__product__subcati__02FC7413">
+      <End Role="subcategory" EntitySet="subcategories" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+    <EntitySet Name="memberships" EntityType="WalmartModels.membership" />
+    <AssociationSet Name="FK__membershi__store__2739D489" Association="WalmartModels.FK__membershi__store__2739D489">
+      <End Role="store" EntitySet="stores" />
+      <End Role="membership" EntitySet="memberships" />
+    </AssociationSet>
+    <EntitySet Name="membership_cards" EntityType="WalmartModels.membership_cards" />
+    <AssociationSet Name="FK__membershi__membe__625A9A57" Association="WalmartModels.FK__membershi__membe__625A9A57">
+      <End Role="membership" EntitySet="memberships" />
+      <End Role="membership_cards" EntitySet="membership_cards" />
+    </AssociationSet>
+    <EntitySet Name="stocks" EntityType="WalmartModels.stock" />
+    <AssociationSet Name="FK__stock__productid__756D6ECB" Association="WalmartModels.FK__stock__productid__756D6ECB">
+      <End Role="product" EntitySet="products" />
+      <End Role="stock" EntitySet="stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stock__employeei__7755B73D" Association="WalmartModels.FK__stock__employeei__7755B73D">
+      <End Role="storeemployee" EntitySet="storeemployees" />
+      <End Role="stock" EntitySet="stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stock__storeid__76619304" Association="WalmartModels.FK__stock__storeid__76619304">
+      <End Role="store" EntitySet="stores" />
+      <End Role="stock" EntitySet="stocks" />
+    </AssociationSet>
+    <EntitySet Name="bills" EntityType="WalmartModels.bill" />
+    <EntitySet Name="billdetails" EntityType="WalmartModels.billdetail" />
+    <AssociationSet Name="FK__bill__cardnumber__0F2D40CE" Association="WalmartModels.FK__bill__cardnumber__0F2D40CE">
+      <End Role="membership_cards" EntitySet="membership_cards" />
+      <End Role="bill" EntitySet="bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bill__empid__11158940" Association="WalmartModels.FK__bill__empid__11158940">
+      <End Role="storeemployee" EntitySet="storeemployees" />
+      <End Role="bill" EntitySet="bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bill__storeid__10216507" Association="WalmartModels.FK__bill__storeid__10216507">
+      <End Role="store" EntitySet="stores" />
+      <End Role="bill" EntitySet="bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__billdetai__billi__16CE6296" Association="WalmartModels.FK__billdetai__billi__16CE6296">
+      <End Role="bill" EntitySet="bills" />
+      <End Role="billdetail" EntitySet="billdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__billdetai__produ__17C286CF" Association="WalmartModels.FK__billdetai__produ__17C286CF">
+      <End Role="product" EntitySet="products" />
+      <End Role="billdetail" EntitySet="billdetails" />
+    </AssociationSet>
+    <EntitySet Name="feedbacks" EntityType="WalmartModels.feedback" />
+    <AssociationSet Name="FK__feedback__cardnu__1B9317B3" Association="WalmartModels.FK__feedback__cardnu__1B9317B3">
+      <End Role="membership_cards" EntitySet="membership_cards" />
+      <End Role="feedback" EntitySet="feedbacks" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="store">
+    <Key>
+      <PropertyRef Name="storeid" />
+    </Key>
+    <Property Name="storeid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="storename" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="managername" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="manageremail" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="managermobile" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="storephoneno" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="storeemployees" Relationship="WalmartModels.FK__storeempl__store__49C3F6B7" FromRole="store" ToRole="storeemployee" />
+    <NavigationProperty Name="products" Relationship="WalmartModels.FK__product__storeid__03F0984C" FromRole="store" ToRole="product" />
+    <NavigationProperty Name="memberships" Relationship="WalmartModels.FK__membershi__store__2739D489" FromRole="store" ToRole="membership" />
+    <NavigationProperty Name="stocks" Relationship="WalmartModels.FK__stock__storeid__76619304" FromRole="store" ToRole="stock" />
+    <NavigationProperty Name="bills" Relationship="WalmartModels.FK__bill__storeid__10216507" FromRole="store" ToRole="bill" />
+  </EntityType>
+  <EntityType Name="storeemployee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="emailid" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="mobileno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="qualification" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="storeid" Type="Int32" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="dateofjoining" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dateofleave" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="store" Relationship="WalmartModels.FK__storeempl__store__49C3F6B7" FromRole="storeemployee" ToRole="store" />
+    <NavigationProperty Name="stocks" Relationship="WalmartModels.FK__stock__employeei__7755B73D" FromRole="storeemployee" ToRole="stock" />
+    <NavigationProperty Name="bills" Relationship="WalmartModels.FK__bill__empid__11158940" FromRole="storeemployee" ToRole="bill" />
+  </EntityType>
+  <Association Name="FK__storeempl__store__49C3F6B7">
+    <End Type="WalmartModels.store" Role="store" Multiplicity="0..1" />
+    <End Type="WalmartModels.storeemployee" Role="storeemployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="storeemployee">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="subcategories" Relationship="WalmartModels.FK__subcatego__categ__6FE99F9F" FromRole="category" ToRole="subcategory" />
+  </EntityType>
+  <EntityType Name="subcategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryid" Type="Int32" />
+    <Property Name="subcategoryname" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="category" Relationship="WalmartModels.FK__subcatego__categ__6FE99F9F" FromRole="subcategory" ToRole="category" />
+    <NavigationProperty Name="products" Relationship="WalmartModels.FK__product__subcati__02FC7413" FromRole="subcategory" ToRole="product" />
+  </EntityType>
+  <Association Name="FK__subcatego__categ__6FE99F9F">
+    <End Type="WalmartModels.category" Role="category" Multiplicity="0..1" />
+    <End Type="WalmartModels.subcategory" Role="subcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="subcategory">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="subcatid" Type="Int32" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="discount" Type="Decimal" Precision="2" Scale="0" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="storeid" Type="Int32" />
+    <Property Name="skunumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="store" Relationship="WalmartModels.FK__product__storeid__03F0984C" FromRole="product" ToRole="store" />
+    <NavigationProperty Name="subcategory" Relationship="WalmartModels.FK__product__subcati__02FC7413" FromRole="product" ToRole="subcategory" />
+    <NavigationProperty Name="stocks" Relationship="WalmartModels.FK__stock__productid__756D6ECB" FromRole="product" ToRole="stock" />
+    <NavigationProperty Name="billdetails" Relationship="WalmartModels.FK__billdetai__produ__17C286CF" FromRole="product" ToRole="billdetail" />
+  </EntityType>
+  <Association Name="FK__product__storeid__03F0984C">
+    <End Type="WalmartModels.store" Role="store" Multiplicity="0..1" />
+    <End Type="WalmartModels.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__product__subcati__02FC7413">
+    <End Type="WalmartModels.subcategory" Role="subcategory" Multiplicity="0..1" />
+    <End Type="WalmartModels.product" Role="product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subcategory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="subcatid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="membership">
+    <Key>
+      <PropertyRef Name="memberid" />
+    </Key>
+    <Property Name="memberid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="merchantname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="emailid" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="mobileno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="identifyproof" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="vatno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="servicetaxno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dateofexpiry" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="storeid" Type="Int32" />
+    <NavigationProperty Name="store" Relationship="WalmartModels.FK__membershi__store__2739D489" FromRole="membership" ToRole="store" />
+    <NavigationProperty Name="membership_cards" Relationship="WalmartModels.FK__membershi__membe__625A9A57" FromRole="membership" ToRole="membership_cards" />
+  </EntityType>
+  <Association Name="FK__membershi__store__2739D489">
+    <End Type="WalmartModels.store" Role="store" Multiplicity="0..1" />
+    <End Type="WalmartModels.membership" Role="membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="membership">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="membership_cards">
+    <Key>
+      <PropertyRef Name="cardnumber" />
+    </Key>
+    <Property Name="cardnumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cardholdernname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mobileno" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="memberid" Type="Int32" />
+    <NavigationProperty Name="membership" Relationship="WalmartModels.FK__membershi__membe__625A9A57" FromRole="membership_cards" ToRole="membership" />
+    <NavigationProperty Name="bills" Relationship="WalmartModels.FK__bill__cardnumber__0F2D40CE" FromRole="membership_cards" ToRole="bill" />
+    <NavigationProperty Name="feedbacks" Relationship="WalmartModels.FK__feedback__cardnu__1B9317B3" FromRole="membership_cards" ToRole="feedback" />
+  </EntityType>
+  <Association Name="FK__membershi__membe__625A9A57">
+    <End Type="WalmartModels.membership" Role="membership" Multiplicity="0..1" />
+    <End Type="WalmartModels.membership_cards" Role="membership_cards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership">
+        <PropertyRef Name="memberid" />
+      </Principal>
+      <Dependent Role="membership_cards">
+        <PropertyRef Name="memberid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="stock">
+    <Key>
+      <PropertyRef Name="stockid" />
+    </Key>
+    <Property Name="stockid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productid" Type="Int32" />
+    <Property Name="storeid" Type="Int32" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="dateofstock" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="employeeid" Type="Int32" />
+    <NavigationProperty Name="product" Relationship="WalmartModels.FK__stock__productid__756D6ECB" FromRole="stock" ToRole="product" />
+    <NavigationProperty Name="storeemployee" Relationship="WalmartModels.FK__stock__employeei__7755B73D" FromRole="stock" ToRole="storeemployee" />
+    <NavigationProperty Name="store" Relationship="WalmartModels.FK__stock__storeid__76619304" FromRole="stock" ToRole="store" />
+  </EntityType>
+  <Association Name="FK__stock__productid__756D6ECB">
+    <End Type="WalmartModels.product" Role="product" Multiplicity="0..1" />
+    <End Type="WalmartModels.stock" Role="stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="stock">
+        <PropertyRef Name="productid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stock__employeei__7755B73D">
+    <End Type="WalmartModels.storeemployee" Role="storeemployee" Multiplicity="0..1" />
+    <End Type="WalmartModels.stock" Role="stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeemployee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="stock">
+        <PropertyRef Name="employeeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stock__storeid__76619304">
+    <End Type="WalmartModels.store" Role="store" Multiplicity="0..1" />
+    <End Type="WalmartModels.stock" Role="stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="stock">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="bill">
+    <Key>
+      <PropertyRef Name="billid" />
+    </Key>
+    <Property Name="billid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cardnumber" Type="Int32" />
+    <Property Name="storeid" Type="Int32" />
+    <Property Name="empid" Type="Int32" />
+    <Property Name="totalamount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="discount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="billamount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="dateofbill" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="membership_cards" Relationship="WalmartModels.FK__bill__cardnumber__0F2D40CE" FromRole="bill" ToRole="membership_cards" />
+    <NavigationProperty Name="storeemployee" Relationship="WalmartModels.FK__bill__empid__11158940" FromRole="bill" ToRole="storeemployee" />
+    <NavigationProperty Name="store" Relationship="WalmartModels.FK__bill__storeid__10216507" FromRole="bill" ToRole="store" />
+    <NavigationProperty Name="billdetails" Relationship="WalmartModels.FK__billdetai__billi__16CE6296" FromRole="bill" ToRole="billdetail" />
+  </EntityType>
+  <EntityType Name="billdetail">
+    <Key>
+      <PropertyRef Name="bdid" />
+    </Key>
+    <Property Name="bdid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="billid" Type="Int32" />
+    <Property Name="productid" Type="Int32" />
+    <Property Name="quantity" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="discount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="netprice" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="totalamount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <NavigationProperty Name="bill" Relationship="WalmartModels.FK__billdetai__billi__16CE6296" FromRole="billdetail" ToRole="bill" />
+    <NavigationProperty Name="product" Relationship="WalmartModels.FK__billdetai__produ__17C286CF" FromRole="billdetail" ToRole="product" />
+  </EntityType>
+  <Association Name="FK__bill__cardnumber__0F2D40CE">
+    <End Type="WalmartModels.membership_cards" Role="membership_cards" Multiplicity="0..1" />
+    <End Type="WalmartModels.bill" Role="bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership_cards">
+        <PropertyRef Name="cardnumber" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="cardnumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bill__empid__11158940">
+    <End Type="WalmartModels.storeemployee" Role="storeemployee" Multiplicity="0..1" />
+    <End Type="WalmartModels.bill" Role="bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeemployee">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="empid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bill__storeid__10216507">
+    <End Type="WalmartModels.store" Role="store" Multiplicity="0..1" />
+    <End Type="WalmartModels.bill" Role="bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__billdetai__billi__16CE6296">
+    <End Type="WalmartModels.bill" Role="bill" Multiplicity="0..1" />
+    <End Type="WalmartModels.billdetail" Role="billdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bill">
+        <PropertyRef Name="billid" />
+      </Principal>
+      <Dependent Role="billdetail">
+        <PropertyRef Name="billid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__billdetai__produ__17C286CF">
+    <End Type="WalmartModels.product" Role="product" Multiplicity="0..1" />
+    <End Type="WalmartModels.billdetail" Role="billdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="billdetail">
+        <PropertyRef Name="productid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ftext" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="cardnumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="membership_cards" Relationship="WalmartModels.FK__feedback__cardnu__1B9317B3" FromRole="feedback" ToRole="membership_cards" />
+  </EntityType>
+  <Association Name="FK__feedback__cardnu__1B9317B3">
+    <End Type="WalmartModels.membership_cards" Role="membership_cards" Multiplicity="1" />
+    <End Type="WalmartModels.feedback" Role="feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership_cards">
+        <PropertyRef Name="cardnumber" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="cardnumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

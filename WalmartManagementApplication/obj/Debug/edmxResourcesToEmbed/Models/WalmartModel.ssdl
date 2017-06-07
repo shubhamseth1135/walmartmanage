@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WalmartModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="emailid" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="usertype" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bill">
+    <Key>
+      <PropertyRef Name="billid" />
+    </Key>
+    <Property Name="billid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cardnumber" Type="int" />
+    <Property Name="storeid" Type="int" />
+    <Property Name="empid" Type="int" />
+    <Property Name="totalamount" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="discount" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="billamount" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="dateofbill" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="billdetails">
+    <Key>
+      <PropertyRef Name="bdid" />
+    </Key>
+    <Property Name="bdid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="billid" Type="int" />
+    <Property Name="productid" Type="int" />
+    <Property Name="quantity" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="price" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="discount" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="netprice" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="totalamount" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ftext" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="cardnumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="membership">
+    <Key>
+      <PropertyRef Name="memberid" />
+    </Key>
+    <Property Name="memberid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="merchantname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="emailid" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="mobileno" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="identifyproof" Type="varchar(max)" Nullable="false" />
+    <Property Name="vatno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="servicetaxno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateofexpiry" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="15" />
+    <Property Name="storeid" Type="int" />
+  </EntityType>
+  <EntityType Name="membership_cards">
+    <Key>
+      <PropertyRef Name="cardnumber" />
+    </Key>
+    <Property Name="cardnumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cardholdernname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="photo" Type="varchar(max)" />
+    <Property Name="Mobileno" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="memberid" Type="int" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" Nullable="false" />
+    <Property Name="subcatid" Type="int" />
+    <Property Name="price" Type="numeric" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="discount" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="photo" Type="varchar(max)" />
+    <Property Name="storeid" Type="int" />
+    <Property Name="skunumber" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="stock">
+    <Key>
+      <PropertyRef Name="stockid" />
+    </Key>
+    <Property Name="stockid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productid" Type="int" />
+    <Property Name="storeid" Type="int" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="dateofstock" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="employeeid" Type="int" />
+  </EntityType>
+  <EntityType Name="store">
+    <Key>
+      <PropertyRef Name="storeid" />
+    </Key>
+    <Property Name="storeid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="storename" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="managername" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="manageremail" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="managermobile" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="storephoneno" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="photo" Type="varchar(max)" />
+    <Property Name="password" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="storeemployees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="emailid" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="mobileno" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="qualification" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dob" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="photo" Type="varchar(max)" />
+    <Property Name="storeid" Type="int" />
+    <Property Name="password" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="dateofjoining" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="dateofleave" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="subcategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryid" Type="int" />
+    <Property Name="subcategoryname" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="description" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__bill__cardnumber__0F2D40CE">
+    <End Role="membership_cards" Type="Self.membership_cards" Multiplicity="0..1" />
+    <End Role="bill" Type="Self.bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership_cards">
+        <PropertyRef Name="cardnumber" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="cardnumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bill__empid__11158940">
+    <End Role="storeemployees" Type="Self.storeemployees" Multiplicity="0..1" />
+    <End Role="bill" Type="Self.bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeemployees">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="empid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bill__storeid__10216507">
+    <End Role="store" Type="Self.store" Multiplicity="0..1" />
+    <End Role="bill" Type="Self.bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="bill">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__billdetai__billi__16CE6296">
+    <End Role="bill" Type="Self.bill" Multiplicity="0..1" />
+    <End Role="billdetails" Type="Self.billdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bill">
+        <PropertyRef Name="billid" />
+      </Principal>
+      <Dependent Role="billdetails">
+        <PropertyRef Name="billid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__billdetai__produ__17C286CF">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="billdetails" Type="Self.billdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="billdetails">
+        <PropertyRef Name="productid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__feedback__cardnu__1B9317B3">
+    <End Role="membership_cards" Type="Self.membership_cards" Multiplicity="1" />
+    <End Role="feedback" Type="Self.feedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership_cards">
+        <PropertyRef Name="cardnumber" />
+      </Principal>
+      <Dependent Role="feedback">
+        <PropertyRef Name="cardnumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__membershi__membe__625A9A57">
+    <End Role="membership" Type="Self.membership" Multiplicity="0..1" />
+    <End Role="membership_cards" Type="Self.membership_cards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="membership">
+        <PropertyRef Name="memberid" />
+      </Principal>
+      <Dependent Role="membership_cards">
+        <PropertyRef Name="memberid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__membershi__store__2739D489">
+    <End Role="store" Type="Self.store" Multiplicity="0..1" />
+    <End Role="membership" Type="Self.membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="membership">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__product__storeid__03F0984C">
+    <End Role="store" Type="Self.store" Multiplicity="0..1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__product__subcati__02FC7413">
+    <End Role="subcategory" Type="Self.subcategory" Multiplicity="0..1" />
+    <End Role="product" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subcategory">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="subcatid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stock__employeei__7755B73D">
+    <End Role="storeemployees" Type="Self.storeemployees" Multiplicity="0..1" />
+    <End Role="stock" Type="Self.stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeemployees">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="stock">
+        <PropertyRef Name="employeeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stock__productid__756D6ECB">
+    <End Role="product" Type="Self.product" Multiplicity="0..1" />
+    <End Role="stock" Type="Self.stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="stock">
+        <PropertyRef Name="productid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__stock__storeid__76619304">
+    <End Role="store" Type="Self.store" Multiplicity="0..1" />
+    <End Role="stock" Type="Self.stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="stock">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__storeempl__store__49C3F6B7">
+    <End Role="store" Type="Self.store" Multiplicity="0..1" />
+    <End Role="storeemployees" Type="Self.storeemployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="store">
+        <PropertyRef Name="storeid" />
+      </Principal>
+      <Dependent Role="storeemployees">
+        <PropertyRef Name="storeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__subcatego__categ__6FE99F9F">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="subcategory" Type="Self.subcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="subcategory">
+        <PropertyRef Name="categoryid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WalmartModelsStoreContainer">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bill" EntityType="Self.bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="billdetails" EntityType="Self.billdetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="feedback" EntityType="Self.feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="membership" EntityType="Self.membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="membership_cards" EntityType="Self.membership_cards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stock" EntityType="Self.stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="store" EntityType="Self.store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="storeemployees" EntityType="Self.storeemployees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategory" EntityType="Self.subcategory" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__bill__cardnumber__0F2D40CE" Association="Self.FK__bill__cardnumber__0F2D40CE">
+      <End Role="membership_cards" EntitySet="membership_cards" />
+      <End Role="bill" EntitySet="bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bill__empid__11158940" Association="Self.FK__bill__empid__11158940">
+      <End Role="storeemployees" EntitySet="storeemployees" />
+      <End Role="bill" EntitySet="bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bill__storeid__10216507" Association="Self.FK__bill__storeid__10216507">
+      <End Role="store" EntitySet="store" />
+      <End Role="bill" EntitySet="bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__billdetai__billi__16CE6296" Association="Self.FK__billdetai__billi__16CE6296">
+      <End Role="bill" EntitySet="bill" />
+      <End Role="billdetails" EntitySet="billdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__billdetai__produ__17C286CF" Association="Self.FK__billdetai__produ__17C286CF">
+      <End Role="product" EntitySet="product" />
+      <End Role="billdetails" EntitySet="billdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__feedback__cardnu__1B9317B3" Association="Self.FK__feedback__cardnu__1B9317B3">
+      <End Role="membership_cards" EntitySet="membership_cards" />
+      <End Role="feedback" EntitySet="feedback" />
+    </AssociationSet>
+    <AssociationSet Name="FK__membershi__membe__625A9A57" Association="Self.FK__membershi__membe__625A9A57">
+      <End Role="membership" EntitySet="membership" />
+      <End Role="membership_cards" EntitySet="membership_cards" />
+    </AssociationSet>
+    <AssociationSet Name="FK__membershi__store__2739D489" Association="Self.FK__membershi__store__2739D489">
+      <End Role="store" EntitySet="store" />
+      <End Role="membership" EntitySet="membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__product__storeid__03F0984C" Association="Self.FK__product__storeid__03F0984C">
+      <End Role="store" EntitySet="store" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__product__subcati__02FC7413" Association="Self.FK__product__subcati__02FC7413">
+      <End Role="subcategory" EntitySet="subcategory" />
+      <End Role="product" EntitySet="product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stock__employeei__7755B73D" Association="Self.FK__stock__employeei__7755B73D">
+      <End Role="storeemployees" EntitySet="storeemployees" />
+      <End Role="stock" EntitySet="stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stock__productid__756D6ECB" Association="Self.FK__stock__productid__756D6ECB">
+      <End Role="product" EntitySet="product" />
+      <End Role="stock" EntitySet="stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__stock__storeid__76619304" Association="Self.FK__stock__storeid__76619304">
+      <End Role="store" EntitySet="store" />
+      <End Role="stock" EntitySet="stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK__storeempl__store__49C3F6B7" Association="Self.FK__storeempl__store__49C3F6B7">
+      <End Role="store" EntitySet="store" />
+      <End Role="storeemployees" EntitySet="storeemployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__subcatego__categ__6FE99F9F" Association="Self.FK__subcatego__categ__6FE99F9F">
+      <End Role="category" EntitySet="category" />
+      <End Role="subcategory" EntitySet="subcategory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

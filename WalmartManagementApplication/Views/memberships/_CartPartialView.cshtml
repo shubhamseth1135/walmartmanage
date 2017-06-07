@@ -1,0 +1,121 @@
+﻿@model List<WalmartManagementApplication.Models.CartVM>
+<script>
+    $(document).ready(function () {
+     
+        $("#generate").click(function () {
+
+            $.get('@Url.Action("checkcartdetails")', {
+                cardnumber: $("#cardnumber").val()
+
+            }, function (result) {
+                if (result == "error1")
+                {
+                    alert("Card Expired");
+                }
+                else if (result == "error2")
+                {
+                    alert("Invalid Card Number");
+                }
+                else {
+
+                    $.get('@Url.Action("generateb")', {
+                        cardnumber: $("#cardnumber").val()
+
+                    }, function (result) {
+                        
+                    });
+                    window.location = '/memberships/PrintBill'
+                  
+                }
+
+            });
+        });
+   
+    });
+   
+
+
+</script>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Sr. No
+        </th>
+        <th>
+            Product Id
+        </th>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Discount
+        </th>
+        <th>
+            Net Price
+        </th>
+        <th>
+            Total Amount
+        </th>
+        <th>
+
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @{
+            int count = 0;
+            int grandtotal = 0;
+            foreach (var item in Model)
+            {
+            grandtotal = grandtotal + Convert.ToInt32(item.totalamount);
+                count++;
+            <tr>
+
+
+                <td>@count</td>
+                <td>@item.productid</td>
+                <td>@item.productname</td>
+                <td id="quant" title="@count">@item.qty</td>
+                <td>@item.price</td>
+                <td>@item.discount</td>
+                <td>@item.netprice</td>
+                <td>@item.totalamount</td>
+                <td><button type="button" id="btncross" title="@count" style="background-repeat:no-repeat;border:0px;background:url('../image/cros.png');width:21px;height:21px"></button></td>
+                <td id="editqty"><button type="button" id="btnedit" class="@item.productid" title="@count" value="@item.qty" style="background-repeat:no-repeat;border:0px;background:url('../image/edit.png');width:21px;height:21px"></button></td>
+                
+            </tr>
+        }
+
+    
+    }
+    <tr>
+        <td colspan="6"  align="center">
+            <b>GrandTotal</b>
+        </td>
+        <td colspan="4" align="center">
+            <b>@grandtotal</b>
+        </td>
+    </tr>
+</table>
+<div class="form-group">
+    @Html.Label("cardnumber", "Enter Member Card Number", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.TextBox("cardnumber", null, new { @class = "form-control" })
+        @Html.ValidationMessage("cardnumber", "", new { @class = "text-danger" })
+        <br />
+        <br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="button" id="generate" value="Generate Bill" class="btn btn-success btn-block" />
+    </div>
+</div>

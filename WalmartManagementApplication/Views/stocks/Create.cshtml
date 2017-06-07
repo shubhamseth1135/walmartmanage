@@ -1,0 +1,126 @@
+﻿@model WalmartManagementApplication.Models.stock
+
+@{
+    Layout = "~/Views/Shared/_employeelayout.cshtml";
+}
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+<script>
+    $(document).ready(function()
+    {
+        $("#dateofstock").datepicker();
+
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#button1").click(function () {
+            var skuno = $("#skunumber").val();
+            $.get('@Url.Action("getdata")', { sku: skuno }, function (data) {
+                var r = JSON.parse(data);
+                var id, name;
+                if (data == "false") {
+                    $("#div2").hide();
+                    alert("SKU Number Not Found");
+                }
+                else {
+                    $.each(r, function (i, item) {
+                        id = item.id;
+                        name = item.name;
+                    });
+                    $("#div2").css("visibility", "visible");
+                    $("#div2").show();
+                    $("#productname").val(name);
+                    $("#productid").val(id);
+                }
+            });
+        });
+    });
+</script>
+
+    
+        @Html.AntiForgeryToken()
+        <div id="div1" class="form-horizontal">
+    <div class="form-horizontal">
+        <h4>Add Stock</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.product.skunumber, "Enter SKU Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("skunumber",null,  new { @class = "form-control" } )
+                @Html.ValidationMessageFor(model => model.product.skunumber, "", new { @class = "text-danger" })
+                <br />
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" id="button1" value="Search" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div id="div2" style="visibility:hidden;" class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.productid, "Product id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("productid", null, new { @class = "form-control", @readonly = "readonly" })
+                    @Html.Hidden("productid")
+                     @Html.ValidationMessageFor(model => model.productid, "", new { @class = "text-danger" })
+                </div>
+            </div>
+           <div class="form-group">
+                @Html.Label("productname", "Product Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBox("productname", null, new { @class = "form-control", @readonly = "readonly" })
+                    
+                    @Html.ValidationMessage("productname", "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+         
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeid, "Store Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 ">
+                    <text>@Session["empstorename"]</text>
+                 </div>
+            </div>
+         
+            <div class="form-group">
+                @Html.LabelFor(model => model.employeeid, "Employee Id", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 ">
+                    <text>@Session["employeeid"]</text>
+                    @Html.Hidden("employeeid",Session["employeeid"])
+                </div>
+            </div>
+         
+            <div class="form-group">
+                @Html.LabelFor(model => model.quantity, "Enter Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.quantity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.quantity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.dateofstock, "Date Of Stock", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.dateofstock, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.dateofstock, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    }
+
+            <div>
+                
+            </div>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.product>
+@{
+    ViewBag.Title = "ProductSearch";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+<div class="newproducts-w3agile">
+    <div class="container">
+        <h3>Products</h3>
+        <div class="agile_top_brands_grids">
+            <!--Looping through products with offers-->
+            @foreach (var item in Model)
+            {
+                <div class="col-md-3 top_brand_left-1" style="margin-bottom:20px;">
+                    <div class="hover14 column">
+                        <div class="agile_top_brand_left_grid">
+                            <div class="agile_top_brand_left_grid_pos">
+                                <img src="~/images/offer.png" alt=" " class="img-responsive">
+                            </div>
+                            <div class="agile_top_brand_left_grid1">
+                                <figure>
+                                    <div class="snipcart-item block">
+                                        <div class="snipcart-thumb" style="text-align:center">
+                                            <img title="" alt="" height="150" width="150" src="@Url.Content(item.photo)">
+                                            <p>@item.productname</p>
+                                            <div class="stars">
+                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star gray-star" aria-hidden="true"></i>
+                                            </div>
+                                            <h4>
+                                                @{
+                                                    double amount = Math.Round(Convert.ToDouble(item.price - (item.price * item.discount) / 100), 0);
+
+                                                }&#8377; @amount <span>&#8377; @Convert.ToDouble(item.price)</span>
+                                            </h4>
+                                        </div>
+
+                                    </div>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                                    }
+
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+

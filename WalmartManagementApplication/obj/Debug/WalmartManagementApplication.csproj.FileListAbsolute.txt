@@ -1,0 +1,285 @@
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\ApplicationInsights.config
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\csc.exe
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Collections.Immutable.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Reflection.Metadata.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\vbc.exe
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe.config
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll.config
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.pdb
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Agent.Intercept.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.Web.Infrastructure.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\WebGrease.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.pdb
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.pdb
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.dll
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.xml
+E:\VMM PROJECT\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.csprojResolveAssemblyReference.cache
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\ApplicationInsights.config
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\csc.exe
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\vbc.exe
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll.config
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.pdb
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\WebGrease.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.pdb
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.xml
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.csprojResolveAssemblyReference.cache
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.dll
+C:\Users\Lab-2(7)\Desktop\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.pdb
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\ApplicationInsights.config
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\csc.exe
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Collections.Immutable.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Reflection.Metadata.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\vbc.exe
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe.config
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll.config
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.pdb
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Agent.Intercept.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.Web.Infrastructure.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\WebGrease.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.pdb
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.xml
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.csprojResolveAssemblyReference.cache
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.dll
+D:\VMM\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.pdb
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\ApplicationInsights.config
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\csc.exe
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Collections.Immutable.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Reflection.Metadata.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\vbc.exe
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe.config
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll.config
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.pdb
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Agent.Intercept.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.Web.Infrastructure.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\WebGrease.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.pdb
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.xml
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.csprojResolveAssemblyReference.cache
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.dll
+E:\WALMART\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.pdb
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\ApplicationInsights.config
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\csc.exe
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Collections.Immutable.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\System.Reflection.Metadata.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\vbc.exe
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\roslyn\VBCSCompiler.exe.config
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll.config
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\WalmartManagementApplication.pdb
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Agent.Intercept.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.Web.Infrastructure.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\WebGrease.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\EntityFramework.SqlServer.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.DependencyCollector.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.Web.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.AI.WindowsServer.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.ApplicationInsights.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Helpers.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Mvc.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Optimization.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.Razor.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Deployment.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\System.Web.WebPages.Razor.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Antlr3.Runtime.pdb
+F:\WalmartManagementApplication\WalmartManagementApplication\bin\Newtonsoft.Json.xml
+F:\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.csprojResolveAssemblyReference.cache
+F:\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.dll
+F:\WalmartManagementApplication\WalmartManagementApplication\obj\Debug\WalmartManagementApplication.pdb

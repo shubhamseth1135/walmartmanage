@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.bill>
+@{
+    ViewBag.Title = "View Bills";
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+   
+            
+        $(".getdet").click(function () {
+            var bid = $(this).attr("title");
+            $.get('@Url.Action("BillDetails")', { billid: bid },
+                function (data) {
+                    $("#billsdiv").html(data);
+            });
+        });
+    });
+
+</script>
+@using (Html.BeginForm("viewbills", "memberships", FormMethod.Post))
+{
+<div class="form-horizontal">
+    &nbsp;
+    &nbsp;
+    <div class="form-group">
+        @Html.Label("cardnumber", "Enter Card Number", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("cardnumber", null, new { @class = "form-control" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" id="btnsubmit" value="submit" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
+}
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            @Html.Label("Bill ID.")
+        </th>
+        <th>
+            @Html.Label("Store Name")
+
+        </th>
+        <th>
+            @Html.Label("Total Amount")
+
+        </th>
+        <th>
+            @Html.Label("Discount")
+        </th>
+        <th>
+            @Html.Label("Bill Amount")
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+     
+            <tr>
+                <td title="@item.billid">
+                    @Html.DisplayFor(modelItem => item.billid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.store.storename)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.totalamount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.discount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.billamount)
+                </td>
+                <td>
+                    <input type="submit" formmethod="post" id="btndet" title="@item.billid" getdet value="Bill Details" class="getdet btn btn-primary" />
+                </td>
+            </tr>
+        
+    }
+</table>
+<div id="billsdiv">
+
+</div>

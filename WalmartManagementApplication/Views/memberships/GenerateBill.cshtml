@@ -1,0 +1,227 @@
+﻿@{
+    ViewBag.Title = "GenerateBill";
+}
+@{
+    Layout = "~/Views/Shared/_employeelayout.cshtml";
+
+}
+<h2 style="text-align:center">Generate Bill</h2>
+<script>
+    $(document).ready(function () {
+        var flag = false;
+        $("body").on("click" ,"#btncross",function () {
+            var result = confirm("Are You Sure You Want To Delete This Item?");
+            if (result == true) {
+                $.get('@Url.Action("deletecart")', { sno: $(this).attr("title") }, function (data) {
+
+                    $("#cartdiv").html(data);
+                });
+            }
+        });
+
+
+
+
+        $("#button1").click(function () {
+            var skuno = $("#skunumber").val();
+            $.get('@Url.Action("getdata")', { sku: skuno }, function (data) {
+                var r = JSON.parse(data);
+                var id, name, disc, price;
+                if (data == "false") {
+                    $("#div2").hide();
+                    alert("SKU Number Not Found");
+                }
+                else {
+                    $.each(r, function (i, item) {
+                        id = item.id;
+                        name = item.name;
+                        dis = item.dis;
+                        price = item.price;
+                        netprice = item.netprice;
+                    });
+                    $("#div2").css("visibility", "visible");
+                    $("#div2").show();
+                    $("#productname").val(name);
+                    $("#pid").val(id);
+                    $("#price").val(price);
+                    $("#discount").val(dis);
+                    $("#netprice").val(netprice);
+                }
+            });
+        });
+
+
+        ///add to cart click
+        $("#btncart").click(function () {
+            $.get('@Url.Action("checkstockqty")', {
+                pid: $("#pid").val(),
+                Quantity: $("#Quantity").val()
+            }, function (result) {
+                if (result == "false") {
+                    alert("No More Stock")
+                }
+                else if (result == "Error")
+                {
+                    alert("No Stock Available")
+                }
+                else {
+                    $.get('@Url.Action("AddToCart")', {
+                        pid: $("#pid").val(),
+                        productname: $("#productname").val(),
+                        price: $("#price").val(),
+                        discount: $("#discount").val(),
+                        netprice: $("#netprice").val(),
+                        Quantity: $("#Quantity").val(),
+
+                    }, function (fdata) {
+                        $("#cartdiv").html(fdata);
+
+                    });
+                }
+            });
+
+        });
+        $("body").on("click", "#btnedit", function () {
+            var sno = parseInt($(this).attr("title"));
+            var curqty = parseInt($(this).attr("value"));
+
+            if (!flag) {
+                $("td[title=" + sno + "]").empty().append('<input id="newqty" value="' + curqty + '"  type="text" />');
+                $(this).attr("style", "background-repeat:no-repeat;border:0px;background:url('../image/save.png');width:21px;height:21px");
+                flag = true;
+            }
+            else {
+                var newqt = $("#newqty").val();
+                $.get('@Url.Action("checkstockcart")', {
+                    pid: $(this).attr("class"),
+                    Quantity: newqt,
+                }, function (fdata) {
+                    if (fdata == "true") {
+                        $.get('@Url.Action("EditCartItem")', {
+                            sno: sno,
+                            Quantity: newqt,
+                        }, function (mdata) {
+                            $("#cartdiv").html(mdata);
+                            flag = false;
+                        });
+                    }
+                    else {
+                        alert("Stock Not Available!!")
+                       
+             
+                      
+
+                    }
+                });
+
+               
+
+            }
+        });
+    });
+</script>
+
+
+<h3 id="head3"></h3>
+
+@Html.AntiForgeryToken()
+
+<div id="div1" class="form-horizontal">
+    <h4>Stock</h4>
+    <hr />
+    
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.Label("skunumber", "Enter SKU Number", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("skunumber", null, new { @class = "form-control" })
+            @Html.ValidationMessage("skunumber", "", new { @class = "text-danger" })
+            <br />
+        </div>
+        
+        <div class="form-group" style="height:80px">
+     
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="button1" value="Submit" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div id="div2" style="visibility:hidden;" class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("pid", "Product Id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("pid", null, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessage("pid", "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            @Html.Label("productname", "Product Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("productname", null, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessage("productname", "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("price", "Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("price", null, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessage("price", "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.Label("dicsount", "Discount Amount", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("discount", null, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessage("discount", "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            @Html.Label("netprice", "Net Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("netprice", null, new { @class = "form-control", @readonly = "readonly" })
+                @Html.ValidationMessage("netprice", "", new { @class = "text-danger" })
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.Label("quantity", "Enter Quantity", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("Quantity", null, new { @class = "form-control" })
+                @Html.ValidationMessage("quantity", "", new { @class = "text-danger" })
+                
+            </div>
+        </div>
+      
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                
+                <input type="button" id="btncart" value="Add To Cart" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
+    <div id="cartdiv">
+
+    </div>
+}
+
+<div>
+    
+</div>
+@Scripts.Render("~/bundles/jqueryval")
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui.js"></script>

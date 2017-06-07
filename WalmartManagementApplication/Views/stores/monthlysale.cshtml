@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "monthlysale";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $("#startdate").datepicker();
+        $("#enddate").datepicker();
+
+        $("#btnview").click(function () {
+            $.get('@Url.Action("checksales")', {
+                startdate: $("#startdate").val(),
+                enddate: $("#enddate").val(),
+            }, function (data) {
+                $("#salesdiv").html(data);
+                
+            });
+
+        });
+
+
+    });
+
+
+
+
+</script>
+<h2>monthlysale</h2>
+
+<div id="div1" class="form-horizontal">
+    <h4>Stock</h4>
+    <hr />
+
+       <div class="form-group">
+        @Html.Label("startdate", "Select Start Date", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("startdate", null, new { @class = "form-control" })
+            
+        </div>
+</div>
+    <div class="form-group">
+        @Html.Label("enddate", "Select End Date", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBox("enddate", null, new { @class = "form-control" })
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" id="btnview" value="View Sales" class="btn btn-primary" />
+        </div>
+    </div>
+    <div id="salesdiv">
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-ui.js"></script>
+<link href="~/Scripts/jquery-ui.css" rel="stylesheet" />

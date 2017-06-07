@@ -1,0 +1,72 @@
+﻿@model WalmartManagementApplication.Models.stock
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>stock</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.quantity)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.quantity)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.dateofstock)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.dateofstock)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.product.productname)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.product.productname)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.storeemployee.name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.storeemployee.name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.store.storename)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.store.storename)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.store>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<script>
+    $(document).ready(function () {
+        $("#btndel").click(function () {
+            var storeid = $("#storeid").val();
+            $.get('@Url.Action("checkdelete")', { storeids: storeid }, function (data) {
+           
+                if (data == "false") {
+                   
+                    alert("Cannot Delete This Store!");
+                    window.location = '/stores/index';
+                }
+                else {
+                    alert("Store Deleted Successfully");
+                }
+            });
+        });
+
+    });
+</script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+@{
+    if (Session["error"] != null)
+    {
+        <h3 class="text-danger" style="text-align:center">@Session["error"]</h3>
+        Session["error"] = null;
+    }
+}
+<body>
+    <p>
+        
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    Sno.
+                </th>
+                <th>
+                    @Html.Label("Store ID")
+                </th>
+                <th>
+                    @Html.Label("Store Name")
+                </th>
+                <th>
+                    @Html.Label("Address")
+                </th>
+                <th>
+                    @Html.Label("Manager Name")
+                </th>
+                <th>
+                    @Html.Label("Manager Email")
+                </th>
+                <th>
+                    @Html.Label("Manager No")
+                </th>
+                <th>
+                    @Html.Label("Store Phone No")
+                </th>
+                <th>
+                    @Html.Label("Photo")
+                </th>
+                <th>
+
+                </th>
+
+            </tr>
+
+            @{  
+                int count = 0;
+                foreach (var item in Model)
+                {
+                    count++;
+
+
+                    using (Html.BeginForm("Delete", "stores", new { id = item.storeid }))
+                    {
+
+                        <tr>
+                            <td>
+                                @count
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.storeid)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.storename)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.managername)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.manageremail)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.managermobile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.storephoneno)
+                            </td>
+                            <td>
+                                <img height="80" width="80"src="@Url.Content(item.photo)" />
+                            </td>
+
+
+                            <td>
+
+                                @Html.ActionLink("Edit", "Edit", new { id = item.storeid }) 
+                                @if (Session["utype"].ToString() != "Limited")
+                                {
+                                    <input type="submit" value="Delete" class="btn btn-danger btn-link" onclick="return confirm('Are You Sure You Want To Delete?')" />
+
+                                }
+                               
+                            </td>
+                        </tr>
+                    }
+                }
+                }
+            }
+        </table>
+        </div>
+</body>
+</html>

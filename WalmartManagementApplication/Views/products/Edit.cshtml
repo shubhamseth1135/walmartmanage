@@ -1,0 +1,104 @@
+﻿@model WalmartManagementApplication.Models.product
+
+@{  
+       Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm("Edit", "products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>product</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.pid)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.productname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.productname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.productname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.subcatid, "subcatgory name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("subcatid", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.subcatid, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.discount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("discount", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.discount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+ 
+            <div class="form-group">
+                @Html.LabelFor(model => model.photo, "Add Photo", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <img height="80" src="@Url.Content(Model.photo)" />
+                    <div>
+                        <input type="file" id="EPhoto" name="EPhoto" accept="image/*" />
+                        @Html.Hidden("photo", Model.photo)
+                        </div>
+                 </div>
+            </div>
+
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.storeid, "storeid", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                       <text>@HttpContext.Current.Session["storename"] </text>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.skunumber, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <text>@Model.skunumber</text>
+                    @Html.HiddenFor(model => model.skunumber,"skunumber")       
+                    
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    <div>
+        
+    </div>
+</body>
+</html>

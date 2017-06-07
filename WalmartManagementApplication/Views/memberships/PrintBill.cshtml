@@ -1,0 +1,84 @@
+﻿@model List<WalmartManagementApplication.Models.CartVM>
+@{
+    ViewBag.Title = "PrintBill";
+    Layout = "~/Views/Shared/_employeelayout.cshtml";
+}
+
+<h2>PrintBill</h2>
+<br />
+<br />
+<div id="printbill">
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Sr. No
+        </th>
+        <th>
+            Product Id
+        </th>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Discount
+        </th>
+        <th>
+            Net Price
+        </th>
+        <th>
+            Total Amount
+        </th>
+        
+    </tr>
+
+    @{
+        int count = 0;
+        int grandtotal = 0;
+        foreach (var item in Model)
+        {
+            grandtotal = grandtotal + Convert.ToInt32(item.totalamount);
+            count++;
+            <tr>
+
+
+                <td>@count</td>
+                <td>@item.productid</td>
+                <td>@item.productname</td>
+                <td id="quant" title="@count">@item.qty</td>
+                <td>@item.price</td>
+                <td>@item.discount</td>
+                <td>@item.netprice</td>
+                <td>@item.totalamount</td>
+                
+            </tr>
+        }
+
+
+    }
+    <tr>
+        <td colspan="4" align="center">
+            <b>GrandTotal</b>
+        </td>
+        <td colspan="4" align="center">
+            <b>@grandtotal</b>
+        </td>
+    </tr>
+</table>
+</div>
+<script src="~/js/printThis.js"></script>
+<input type="button" id="btnprint" value="Print Bill" class="btn btn-success" />
+<script>
+    $(document).ready(function () {
+        $("#btnprint").click(function () {
+            $("#printbill").printThis();
+
+        });
+    });
+
+</script>

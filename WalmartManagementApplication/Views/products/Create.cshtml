@@ -1,0 +1,123 @@
+﻿@model WalmartManagementApplication.Models.product
+
+@{
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#categoryname").change(function () {
+            $("#subcatid").empty();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetSubcategories")',
+                dataType: 'json',
+                data: { catid: $("#categoryname").val() },
+                success: function (subcats) {
+                    $.each(subcats, function (i, subcat) {
+                        $("#subcatid").append("<option value= " + subcat.id + ">" + subcat.subcategoryname + "</option>")
+                    })
+                },
+                error: function (ex) {
+                    alert('Failed to retrieve sub categories.' + ex);
+                }
+            });
+            return false;
+        })
+    });
+</script>
+@using (Html.BeginForm("Create", "products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Add Product</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.subcategory.category.categoryname, "Select Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("categoryname", null,"Select Category", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.subcategory.category.categoryname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.subcatid, "Sub Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownList("subcatid", null, htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownList("subcatid", new SelectList(string.Empty, "Value", "Text"), "Please select a sub-category", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.subcatid, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.productname, "Product Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.productname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.productname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.price, "Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+   
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.discount, "Discount %", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+             
+                             @Html.DropDownList("discount", null, htmlAttributes: new { @class = "form-control" })
+             
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.photo, "Add Photo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="Photo" name="Photo" accept="image/*" />
+                @Html.ValidationMessageFor(model => model.photo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.storeid, "Store Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <text>@HttpContext.Current.Session["storename"] </text>        </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.skunumber, "Sku Number", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.skunumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.skunumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    
+</div>
+</body>
+</html>

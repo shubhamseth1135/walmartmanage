@@ -1,0 +1,109 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.storeemployee>
+
+@{
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+
+    <p>
+        
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>
+                    @Html.Label("Name")
+                </th>
+                <th>
+                    @Html.Label("Gen")
+                </th>
+                <th>
+                    @Html.Label("Email")
+                </th>
+                <th>
+                    @Html.Label("Address")
+                </th>
+                <th>
+                    @Html.Label("Mobile")
+                </th>
+                <th>
+                    @Html.Label("Qualification")
+                </th>
+                <th>
+                    @Html.Label("DOB")
+                </th>
+                <th>
+                    @Html.Label("Photo")
+                </th>
+                
+                <th>
+                    @Html.Label("Joining Date")
+                </th>
+                <th>
+                    @Html.Label("Leave Date")
+                </th>
+                <th>
+                    @Html.Label("Status")
+                </th>
+                <th>
+                    @Html.Label("Store Name")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.emailid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mobileno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.qualification)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dob)
+                    </td>
+                    <td>
+                        <img height="80" width="80" src="@Url.Content(item.photo)" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dateofjoining)
+                    </td>
+                    <td>
+                        @if (item.dateofleave == null || item.dateofleave=="")
+                        {
+                            <text>N/A</text>
+                        }
+                        else
+                        {
+                        @Html.DisplayFor(modelItem => item.dateofleave)
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.store.storename)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.id }) 
+                        
+                      
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

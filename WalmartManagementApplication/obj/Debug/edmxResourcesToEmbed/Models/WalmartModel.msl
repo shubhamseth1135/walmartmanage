@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WalmartModelsStoreContainer" CdmEntityContainer="WalmartContext">
+    <EntitySetMapping Name="Administrators">
+      <EntityTypeMapping TypeName="WalmartModels.Administrator">
+        <MappingFragment StoreEntitySet="Administrator">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stores">
+      <EntityTypeMapping TypeName="WalmartModels.store">
+        <MappingFragment StoreEntitySet="store">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="storephoneno" ColumnName="storephoneno" />
+          <ScalarProperty Name="managermobile" ColumnName="managermobile" />
+          <ScalarProperty Name="manageremail" ColumnName="manageremail" />
+          <ScalarProperty Name="managername" ColumnName="managername" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="storename" ColumnName="storename" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storeemployees">
+      <EntityTypeMapping TypeName="WalmartModels.storeemployee">
+        <MappingFragment StoreEntitySet="storeemployees">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateofleave" ColumnName="dateofleave" />
+          <ScalarProperty Name="dateofjoining" ColumnName="dateofjoining" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="WalmartModels.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategories">
+      <EntityTypeMapping TypeName="WalmartModels.subcategory">
+        <MappingFragment StoreEntitySet="subcategory">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="subcategoryname" ColumnName="subcategoryname" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="WalmartModels.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="skunumber" ColumnName="skunumber" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="subcatid" ColumnName="subcatid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="productname" ColumnName="productname" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memberships">
+      <EntityTypeMapping TypeName="WalmartModels.membership">
+        <MappingFragment StoreEntitySet="membership">
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dateofexpiry" ColumnName="dateofexpiry" />
+          <ScalarProperty Name="servicetaxno" ColumnName="servicetaxno" />
+          <ScalarProperty Name="vatno" ColumnName="vatno" />
+          <ScalarProperty Name="identifyproof" ColumnName="identifyproof" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+          <ScalarProperty Name="merchantname" ColumnName="merchantname" />
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="membership_cards">
+      <EntityTypeMapping TypeName="WalmartModels.membership_cards">
+        <MappingFragment StoreEntitySet="membership_cards">
+          <ScalarProperty Name="memberid" ColumnName="memberid" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="Mobileno" ColumnName="Mobileno" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="cardholdernname" ColumnName="cardholdernname" />
+          <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stocks">
+      <EntityTypeMapping TypeName="WalmartModels.stock">
+        <MappingFragment StoreEntitySet="stock">
+          <ScalarProperty Name="employeeid" ColumnName="employeeid" />
+          <ScalarProperty Name="dateofstock" ColumnName="dateofstock" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="stockid" ColumnName="stockid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bills">
+      <EntityTypeMapping TypeName="WalmartModels.bill">
+        <MappingFragment StoreEntitySet="bill">
+          <ScalarProperty Name="dateofbill" ColumnName="dateofbill" />
+          <ScalarProperty Name="billamount" ColumnName="billamount" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="totalamount" ColumnName="totalamount" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+          <ScalarProperty Name="billid" ColumnName="billid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="billdetails">
+      <EntityTypeMapping TypeName="WalmartModels.billdetail">
+        <MappingFragment StoreEntitySet="billdetails">
+          <ScalarProperty Name="totalamount" ColumnName="totalamount" />
+          <ScalarProperty Name="netprice" ColumnName="netprice" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="productid" ColumnName="productid" />
+          <ScalarProperty Name="billid" ColumnName="billid" />
+          <ScalarProperty Name="bdid" ColumnName="bdid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="feedbacks">
+      <EntityTypeMapping TypeName="WalmartModels.feedback">
+        <MappingFragment StoreEntitySet="feedback">
+          <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+          <ScalarProperty Name="ftext" ColumnName="ftext" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "salebyproduct";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/js/jquery.canvasjs.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(
+        $.get("@Url.Action("saledata")", "",
+     function (chartdata) {
+         var chart = new CanvasJS.Chart("chartContainer",
+         {
+             title: {
+                 text: "Sale By Products"
+             },
+             exportFileName: "Pie Chart",
+             exportEnabled: true,
+             animationEnabled: true,
+             legend: {
+                 verticalAlign: "bottom",
+                 horizontalAlign: "center"
+             },
+             data: [
+             {
+                 type: "pie",
+                 showInLegend: true,
+                 toolTipContent: "{name}: <strong>{y}%</strong>",
+                 indexLabel: "{name} {y}%",
+                 dataPoints: chartdata
+             }
+             ]
+         });
+         chart.render();
+         $(".canvasjs-chart-credit").hide();
+         
+     })
+
+    );
+</script>
+<div class="row" >
+    <div class="col-md-7 col-lg-offset-2" id="chartContainer" style="height:500px;width:700px;">
+
+    </div>
+</div>

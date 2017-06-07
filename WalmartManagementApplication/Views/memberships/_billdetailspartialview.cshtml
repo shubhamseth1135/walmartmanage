@@ -1,0 +1,54 @@
+﻿@model List<WalmartManagementApplication.Models.billdetail>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Bill Detail ID
+        </th>
+        <th>
+            Product Id
+        </th>
+ 
+        <th>
+            Quantity
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Discount
+        </th>
+        <th>
+            Net Price
+        </th>
+        <th>
+            Total Amount
+        </th>
+        
+    </tr>
+
+    @{
+        int count = 0;
+        foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.productid</td>                
+                <td >@item.quantity</td>
+                <td>@item.price</td>
+                <td>@item.discount</td>
+                <td>@item.netprice</td>
+                <td>@item.totalamount</td>
+            </tr>
+        }
+
+
+    }
+
+</table>
+
+
+
+
+
+

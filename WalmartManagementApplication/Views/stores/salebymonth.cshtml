@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Sale By Month";
+   
+        Layout = "~/Views/Shared/_StoreLayout.cshtml";
+        List<SelectListItem> yrs = new List<SelectListItem>();
+        for (int year = 2017; year <= 2020; year++)
+        {
+            yrs.Add(new SelectListItem() { Text = year.ToString(), Value = year.ToString() });
+        }
+        ViewBag.year = yrs;
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/js/jquery.canvasjs.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnsubmit").click(function () {
+
+            $.get("@Url.Action("monthlysaledata")", { year: $("#year").val() },
+         function (chartdata) {
+             var chart = new CanvasJS.Chart("chartContainer",
+             {
+                 title: {
+                     text: "Sale For Year " + $("#year").val()
+                 },
+                 exportFileName: "Column Chart",
+                 exportEnabled: false,
+                 animationEnabled: true,
+                 legend: {
+                     verticalAlign: "bottom",
+                     horizontalAlign: "center"
+                 },
+                 data: [
+                 {
+                     type: "column",
+                     showInLegend: true,
+                     toolTipContent: "{name}: <strong>{y}</strong>",
+                     indexLabel: "{name}",
+                     dataPoints: chartdata
+                 }
+                 ]
+             });
+             chart.render();
+             $(".canvasjs-chart-credit").hide();
+         })
+        })
+    });
+</script>
+<div class="form-horizontal">
+    &nbsp;
+    &nbsp;
+    <div class="form-group">
+        <label for="year" class="control-label col-md-2">Select Year</label>
+        <div class="col-md-10">
+            @Html.DropDownList("year", null, "Select Year", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" id="btnsubmit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-lg-offset-3" id="chartContainer" style="height:500px;width:700px;">
+
+</div>

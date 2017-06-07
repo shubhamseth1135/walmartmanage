@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WalmartManagementApplication.Models.Administrator>
+@using WalmartManagementApplication.Models
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        
+    </p>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>
+                Sno.
+            </th>
+            <th>
+                @Html.Label("Username")
+            </th>
+            <th>
+                @Html.Label("Full Name")
+            </th>
+            <th>
+                @Html.Label("Gender")
+            </th>
+            <th>
+                @Html.Label("Email ID")
+            </th>
+            <th>
+                @Html.Label("User Type")
+            </th>
+            <th></th>
+        </tr>
+    
+    @{ int count = 0;
+                foreach (Administrator item in Model)
+                {
+                    count++;
+                    using (Html.BeginForm("Delete", "Administrators", new { id = item.username }))
+                    {
+        <tr>
+            <td>
+                @count
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fullname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.emailid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usertype)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.username }) |
+                <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are You Sure You Want To Delete?')" />
+            </td>
+        </tr>
+                }
+    }
+        }
+    </table>
+</body>
+</html>
